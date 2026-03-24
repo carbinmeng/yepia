@@ -156,3 +156,11 @@ sudo chmod +x /Applications/YEPIA.app/Contents/Resources/app.asar.unpacked/node_
 2. Optional: delete YEPIA data at `~/.yepia/` (this removes cached data, logs, and saved settings).
 
 Your projects/files remain in the work directory you selected.
+
+## Screenshots
+
+![](screenshot/iScreen%20Shoter%20-%20YEPIA%20-%20260324153059.png)
+![](screenshot/iScreen%20Shoter%20-%20YEPIA%20-%20260324153114.png)
+![](screenshot/iScreen%20Shoter%20-%20YEPIA%20-%20260324153141.png)
+![](screenshot/iScreen%20Shoter%20-%20YEPIA%20-%20260324154142.png)
+![](screenshot/iScreen%20Shoter%20-%20YEPIA%20-%20260324155644.png)
