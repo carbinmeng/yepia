@@ -1,14 +1,30 @@
 # YEPIA (Your Exclusive Personal Intelligent Assistant)
 
-YEPIA is an autonomous ai agent desktop app (macOS) with an integrated terminal, workspace tooling, and extensibility via:
+YEPIA is an autonomous AI agent desktop app for macOS with integrated terminal, workspace tooling, and extensibility via:
 
-- MCP (Model Context Protocol) servers (tools/resources)
-- Subagents (specialized agent roles)
-- Skills (reusable capability bundles)
+- **MCP (Model Context Protocol)** servers for tools and resources
+- **Subagents** for specialized agent roles
+- **Skills** for reusable capability bundles
+- **Bundled CLI Tools** for enhanced productivity
+
+## Features
+
+- 🤖 **Autonomous AI Agent** - Smart assistance with contextual awareness
+- 🖥️ **Integrated Terminal** - Full-featured terminal workspace
+- 🔧 **Bundled Tools** - Pre-packaged CLI utilities (ripgrep, fd, jq, yq)
+- 🔐 **Secure Key Storage** - API keys stored in macOS Keychain
+- 🔌 **Extensible Architecture** - MCP servers, subagents, and skills
+- 💬 **Enhanced Chat Interface** - Auto-expand bubbles, jump controls, running indicators
 
 ## Download
 
-Get the latest macOS `.dmg` from this repo's GitHub Releases page.
+Get the latest macOS `.dmg` from this repo's **[GitHub Releases](../../releases)** page.
+
+## System Requirements
+
+- macOS 10.15+ (Catalina or later)
+- Apple Silicon (M1/M2) recommended for optimal performance
+- 4GB RAM minimum, 8GB recommended
 
 ## Install (macOS)
 
@@ -108,24 +124,85 @@ Discovery paths (recursive, low to high priority):
 - Work directory (current): `./.agents/skills/`
 - Work directory (current): `./.yepia/skills/` (highest priority)
 
-### Configure An API Provider (Required)
+### Configure API Provider (Required)
 
 1. Open `Models`.
 2. In `Provider Auth`, click `Add Auth` (plus icon).
-3. In the `Add Auth` tab, select a provider and paste your API key.
+3. Select a provider and paste your API key.
 4. Save.
 
-Keys are stored on disk in `~/.yepia/config/settings/auth.json` with restricted permissions.
+🔐 **Security**: API keys are securely stored in macOS Keychain, providing hardware-backed encryption and protection. Your keys are never stored in plain text files and are protected by macOS security mechanisms.
 
-### Choose A Favorite Model (Required)
+### Choose Favorite Model (Required)
 
 1. Open `Models`.
 2. In `Online Models`, find a model you want to use.
 3. Click the star icon to add it to your favorites.
 
-After you have set a provider API key and selected at least one favorite model, you can create a task and start chatting.
+After configuring a provider API key and selecting at least one favorite model, you can create tasks and start chatting.
 
-### Add MCP Servers (Optional)
+### Bundled CLI Tools
+
+YEPIA includes essential CLI tools pre-packaged for macOS Apple Silicon, ensuring consistent performance and eliminating manual setup:
+
+### 📦 **ripgrep (rg)** - Fast File Search
+
+**GitHub**: [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
+
+Blazingly fast command-line search tool that combines the usability of `grep` with the speed of `ag`. Perfect for searching through large codebases.
+
+```bash
+rg "pattern" --type rust --case-sensitive
+```
+
+### 📂 **fd** - User-Friendly File Finder
+
+**GitHub**: [sharkdp/fd](https://github.com/sharkdp/fd)
+
+Simple, fast, and user-friendly alternative to `find`. Features intuitive syntax, colorized output, and smart defaults.
+
+```bash
+fd "pattern" --extension md --type file
+```
+
+### 🔧 **jq** - JSON Processor
+
+**GitHub**: [jqlang/jq](https://github.com/jqlang/jq)
+
+Lightweight and flexible command-line JSON processor. Essential for parsing, filtering, and transforming JSON data.
+
+```bash
+echo '{"name": "test"}' | jq '.name'
+```
+
+### 📋 **yq** - YAML/XML/JSON Processor
+
+**GitHub**: [mikefarah/yq](https://github.com/mikefarah/yq)
+
+Portable command-line processor for YAML, XML, and JSON files. Like `jq` but supports multiple formats and is perfect for configuration file management.
+
+```bash
+yq '.database.host' config.yaml
+```
+
+### 🚀 Benefits
+
+- **Zero Setup**: Tools are immediately available without installation
+- **Consistent Versions**: Tested versions ensure compatibility
+- **Optimized for Apple Silicon**: Native ARM64 performance
+- **Integrated**: Seamlessly works with YEPIA's tool system
+
+### 🛠️ Troubleshooting
+
+If bundled tools exit with code 137 (SIGKILL), they may have macOS quarantine attributes:
+
+```bash
+# Remove quarantine attributes
+xattr -d com.apple.quarantine /Applications/YEPIA.app/Contents/Resources/app.asar.unpacked/release/bin/rg
+xattr -d com.apple.quarantine /Applications/YEPIA.app/Contents/Resources/app.asar.unpacked/release/bin/fd
+```
+
+## Add MCP Servers (Optional)
 
 1. Open `MCP Servers`.
 2. Click the `+` icon in the header to open `Add MCP Server`.
