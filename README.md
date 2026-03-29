@@ -198,8 +198,10 @@ If bundled tools exit with code 137 (SIGKILL), they may have macOS quarantine at
 
 ```bash
 # Remove quarantine attributes
-xattr -d com.apple.quarantine /Applications/YEPIA.app/Contents/Resources/app.asar.unpacked/release/bin/rg
-xattr -d com.apple.quarantine /Applications/YEPIA.app/Contents/Resources/app.asar.unpacked/release/bin/fd
+xattr -d com.apple.quarantine /Applications/YEPIA.app/Contents/Resources/bin/rg
+xattr -d com.apple.quarantine /Applications/YEPIA.app/Contents/Resources/bin/fd
+xattr -d com.apple.quarantine /Applications/YEPIA.app/Contents/Resources/bin/jq
+xattr -d com.apple.quarantine /Applications/YEPIA.app/Contents/Resources/bin/yq
 ```
 
 ## Add MCP Servers (Optional)
