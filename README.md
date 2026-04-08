@@ -10,6 +10,7 @@ YEPIA is an autonomous AI agent desktop app for macOS with integrated terminal, 
 ## Features
 
 - 🤖 **Autonomous AI Agent** - Smart assistance with contextual awareness
+- 🧠 **Brainstorm Multi-Agent** - Collaborative AI discussions with crew-based group chat
 - 🖥️ **Integrated Terminal** - Full-featured terminal workspace
 - 🔧 **Bundled Tools** - Pre-packaged CLI utilities (ripgrep, fd, jq, yq)
 - 🔐 **Secure Key Storage** - API keys stored in macOS Keychain
