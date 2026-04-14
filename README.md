@@ -35,6 +35,8 @@ Get the latest macOS `.dmg` from this repo's **[GitHub Releases](../../releases)
 
 If macOS blocks the app, go to `System Settings` -> `Privacy & Security` and allow it to open.
 
+> **⚠️ Important Note**: Since I do not have an Apple Developer account, macOS may block the app from opening. If you encounter this issue, please run the fix script located at [scripts/fix-yepia-macos.sh](scripts/fix-yepia-macos.sh) in the repository root.
+
 ## First Launch
 
 On first launch after installation:
